@@ -1,3 +1,15 @@
+const closeAddBook = document.querySelector('#close-add-book');
+const openAddBook = document.querySelector('#open-add-book');
+const curtain = document.querySelector('.curtain');
+
+openAddBook.addEventListener('click', () => {
+    curtain.classList.toggle('hidden');
+});
+
+closeAddBook.addEventListener('click', () => {
+    curtain.classList.toggle('hidden');
+});
+
 let myLibrary = [];
 
 function createBookEntry(title, author, percent) {
@@ -31,18 +43,6 @@ function createBookEntry(title, author, percent) {
     trashDiv.setAttribute('src', 'assets/icon-trash-off.svg');
     trashDiv.setAttribute('class', 'btn');
 }
-
-const closeAddBook = document.querySelector('#close-add-book');
-const openAddBook = document.querySelector('#open-add-book');
-const curtain = document.querySelector('.curtain');
-
-openAddBook.addEventListener('click', () => {
-    curtain.classList.toggle('hidden');
-});
-
-closeAddBook.addEventListener('click', () => {
-    curtain.classList.toggle('hidden');
-});
 
 function Book(title, author, percent) {
     this.title = title;
