@@ -10,7 +10,18 @@ closeAddBook.addEventListener('click', () => {
     curtain.classList.toggle('hidden');
 });
 
-let myLibrary = [];
+let myLibrary = [
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee', percent: '100' },
+    { title: '1984', author: 'George Orwell', percent: '65' },
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', percent: '36' },
+    { title: 'Pride and Prejudice', author: 'Jane Austen', percent: '23' },
+    { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', percent: '76' },
+    { title: 'The Catcher in the Rye', author: 'J.D. Salinger', percent: '75' },
+    { title: 'Animal Farm', author: 'George Orwell', percent: '27' },
+    { title: 'Brave New World', author: 'Aldous Huxley', percent: '93' },
+    { title: 'The Picture of Dorian Gray', author: 'Oscar Wilde', percent: '48' },
+    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', percent: '63' },
+];
 
 function createBookEntry(title, author, percent) {
     const mainDiv = document.getElementsByTagName('main')[0];
@@ -23,11 +34,14 @@ function createBookEntry(title, author, percent) {
     bookmarkDiv.setAttribute('class', 'bookmark btn');
     bookmarkDiv.setAttribute('src', 'assets/icon-bookmark.svg');
 
+    const bookDetailsDiv = document.createElement('div');
+    bookDiv.appendChild(bookDetailsDiv);
+
     const titleDiv = document.createElement('h2');
-    bookDiv.appendChild(titleDiv);
+    bookDetailsDiv.appendChild(titleDiv);
     titleDiv.textContent = title;
     const authorDiv = document.createElement('h3');
-    bookDiv.appendChild(authorDiv);
+    bookDetailsDiv.appendChild(authorDiv);
     authorDiv.textContent = author;
 
     const commentsDiv = document.createElement('div');
@@ -50,6 +64,6 @@ function Book(title, author, percent) {
     this.percent = percent;
 }
 
-for (let i = 0; i <= 10; i++) {
-    createBookEntry('Lord of the rings', 'J. R. R. Tolkien', '100');
+for (let i = 0; i <= myLibrary.length; i++) {
+    createBookEntry(myLibrary[i].title, myLibrary[i].author, myLibrary[i].percent);
 }
