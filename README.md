@@ -4,6 +4,8 @@ The Odin Project - Intermediate JS project
 
 ## Warning! This is a work in progress.
 
+LIVE SITE [HERE](https://hello-damiro.github.io/odin-library)
+
 **Day 1:** Prepared initial files. Finished styling complete with assets and functionalities of button. Started with the JS script.
 
 ## Challenge
