@@ -60,7 +60,7 @@ header {
     margin: 32px 0;
 }
 
-.add {
+#open-add-book {
     font-size: 2.4rem;
     width: 36px;
     height: 36px;
@@ -72,7 +72,8 @@ header {
     justify-content: center;
     align-items: center;
 }
-.add:hover {
+
+#open-add-book:hover {
     background: var(--yellow);
     color: var(--blue);
 }
@@ -226,4 +227,8 @@ footer img {
 
 .hidden {
     display: none;
+}
+
+.btn:hover {
+    cursor: pointer;
 }

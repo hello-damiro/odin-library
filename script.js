@@ -8,7 +8,7 @@ function createBookEntry(title, author, percent) {
 
     const bookmarkDiv = document.createElement('img');
     bookDiv.appendChild(bookmarkDiv);
-    bookmarkDiv.setAttribute('class', 'bookmark');
+    bookmarkDiv.setAttribute('class', 'bookmark btn');
     bookmarkDiv.setAttribute('src', 'assets/icon-bookmark.svg');
 
     const titleDiv = document.createElement('h2');
@@ -29,9 +29,20 @@ function createBookEntry(title, author, percent) {
     const trashDiv = document.createElement('img');
     commentsDiv.appendChild(trashDiv);
     trashDiv.setAttribute('src', 'assets/icon-trash-off.svg');
+    trashDiv.setAttribute('class', 'btn');
 }
 
-// createBookEntry('Lord of the rings', 'J. R. R. Tolkien', '100');
+const closeAddBook = document.querySelector('#close-add-book');
+const openAddBook = document.querySelector('#open-add-book');
+const curtain = document.querySelector('.curtain');
+
+openAddBook.addEventListener('click', () => {
+    curtain.classList.toggle('hidden');
+});
+
+closeAddBook.addEventListener('click', () => {
+    curtain.classList.toggle('hidden');
+});
 
 function Book(title, author, percent) {
     this.title = title;
