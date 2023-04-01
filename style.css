@@ -35,7 +35,6 @@ body {
     color: var(--yellow-lt);
     font-family: var(--font);
     font-weight: 300;
-    line-height: 1.6rem;
 }
 
 .container {
@@ -45,28 +44,30 @@ body {
     margin: 0 auto;
     display: flex;
     flex: 1;
+    padding: 0 32px;
     flex-direction: column;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: var(--yellow);
 }
 
 header {
     display: flex;
-    align-item: center;
+    align-items: center;
     justify-content: space-between;
-    margin: 32px 16px;
+    margin: 32px 0;
 }
 
 .add {
     font-size: 2.4rem;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
     background: var(--yellow-lt);
     color: var(--blue);
-    border-radius: 50%;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,10 +78,10 @@ header {
 }
 
 main {
-    margin: 16px 16px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
+    line-height: 1.4rem;
 }
 
 .book {
@@ -93,10 +94,31 @@ main {
 
 .book h2 {
     font-weight: 700;
+    padding-top: 8px;
 }
 
 .book h3 {
     font-size: 0.9rem;
+}
+
+.bookmark {
+    position: absolute;
+    margin-top: -18px;
+}
+
+.comments {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+
+.comments h4 {
+    color: var(--green);
+    font-size: 0.8rem;
+}
+
+.comments img {
+    margin-left: 4px;
 }
 
 footer {
