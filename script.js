@@ -1,3 +1,5 @@
+let myLibrary = [];
+
 function createBookEntry(title, author, percent) {
     const mainDiv = document.getElementsByTagName('main')[0];
     const bookDiv = document.createElement('div');
@@ -29,4 +31,14 @@ function createBookEntry(title, author, percent) {
     trashDiv.setAttribute('src', 'assets/icon-trash-off.svg');
 }
 
-createBookEntry('Lord of the rings', 'J. R. R. Tolkien', '100');
+// createBookEntry('Lord of the rings', 'J. R. R. Tolkien', '100');
+
+function Book(title, author, percent) {
+    this.title = title;
+    this.author = author;
+    this.percent = percent;
+}
+
+for (let i = 0; i <= 10; i++) {
+    createBookEntry('Lord of the rings', 'J. R. R. Tolkien', '100');
+}
