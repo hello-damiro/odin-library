@@ -1,0 +1,117 @@
+@import url('reset.css');
+
+:root {
+    /* SYSTEM FONTS */
+    --font: 'Roboto Slab', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    /* COLORS */
+    --white: #e6e6e6;
+    --gray: #d5d5d5;
+    --yellow-lt: #eed9c3;
+    --yellow: #e3b261;
+    --green: #a78347;
+    --green-dk: #353535;
+    --blue: #111827;
+
+    /* SIZING */
+    --banner-w: 35vw;
+    --form-w: 65vw;
+    --min-w: 380px;
+    --max-w: 820px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover {
+    color: var(--yellow);
+}
+
+body {
+    background: var(--blue);
+    color: var(--yellow-lt);
+    font-family: var(--font);
+    font-weight: 300;
+    line-height: 1.6rem;
+}
+
+.container {
+    max-width: var(--max-w);
+    min-width: var(--min-w);
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--yellow);
+}
+
+header {
+    display: flex;
+    align-item: center;
+    justify-content: space-between;
+    margin: 32px 16px;
+}
+
+.add {
+    font-size: 2.4rem;
+    width: 32px;
+    height: 32px;
+    background: var(--yellow-lt);
+    color: var(--blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add:hover {
+    background: var(--yellow);
+    color: var(--blue);
+}
+
+main {
+    margin: 16px 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.book {
+    padding: 16px;
+    background: var(--gray);
+    color: var(--blue);
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.book h2 {
+    font-weight: 700;
+}
+
+.book h3 {
+    font-size: 0.9rem;
+}
+
+footer {
+    position: sticky;
+    top: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+footer img {
+    width: 32px;
+    margin: 0 8px;
+}
