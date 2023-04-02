@@ -1,12 +1,20 @@
 # odin-library
 
-The Odin Project - Intermediate JS project
+## The Odin Project - Intermediate JS project
 
-## Warning! This is a work in progress.
+<!-- ## Warning! This is a work in progress -->
+
+From here on, concept are fairly new to me specially doing it to a new language. Time is at the essence, hopefully I can grasp all upcoming concept ggracefully. **_Completed April 02 2023_**
 
 LIVE SITE [HERE](https://hello-damiro.github.io/odin-library)
 
+</br>
+
 **Day 1:** Prepared initial files. Finished styling complete with assets and functionalities of button. Started with the JS script.
+
+**Day 2:** Halfday struggled with constructors finding way best to implement it. Overthinking strikes again. Done 4 of the afternoon.
+
+</br>
 
 ## Challenge
 
