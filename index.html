@@ -33,7 +33,7 @@
         </footer>
     </div>
 
-    <div class="add-book-curtain">
+    <div class="add-book-curtain hidden">
         <div class="add-book">
             <div>
                 <h2>New Book</h2>
@@ -51,9 +51,15 @@
                     <input type="text" id="new-author">
                     <p class="alert"></p>
                 </div>
-            </fieldset>
 
-            <input type="submit" id="submit" value="Add Book">
+            </fieldset>
+            <div class="checkout">
+                <div>
+                    <input type="checkbox" id="finished-book" name="finished-book" value="true">
+                    <label for="finished-book" class="list-label">Finished Book</label>
+                </div>
+                <input type="submit" id="submit" value="Add Book">
+            </div>
         </div>
     </div>
 

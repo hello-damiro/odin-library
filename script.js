@@ -1,19 +1,20 @@
 let myLibrary = [
-    { title: 'To Kill a Mockingbird', author: 'Harper Lee', percent: '100' },
-    { title: '1984', author: 'George Orwell', percent: '65' },
-    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', percent: '36' },
-    { title: 'Pride and Prejudice', author: 'Jane Austen', percent: '23' },
-    { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', percent: '76' },
-    { title: 'The Catcher in the Rye', author: 'J.D. Salinger', percent: '75' },
-    { title: 'Animal Farm', author: 'George Orwell', percent: '27' },
-    { title: 'Brave New World', author: 'Aldous Huxley', percent: '93' },
-    { title: 'The Picture of Dorian Gray', author: 'Oscar Wilde', percent: '48' },
-    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', percent: '63' },
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee', status: true },
+    { title: '1984', author: 'George Orwell', status: false },
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', status: true },
+    { title: 'Pride and Prejudice', author: 'Jane Austen', status: false },
+    { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', status: true },
+    { title: 'The Catcher in the Rye', author: 'J.D. Salinger', status: true },
+    { title: 'Animal Farm', author: 'George Orwell', status: true },
+    { title: 'Brave New World', author: 'Aldous Huxley', status: true },
+    { title: 'The Picture of Dorian Gray', author: 'Oscar Wilde', status: true },
+    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', status: true },
 ];
 
 const mainDiv = document.querySelector('main');
 const newBookTitle = document.querySelector('#new-title');
 const newBookAuthor = document.querySelector('#new-author');
+const newBookStatus = document.querySelector('#finished-book');
 const closeAddBookPanel = document.querySelector('#close-add-book');
 const openAddBookPanel = document.querySelector('#open-add-book');
 const addBookPanel = document.querySelector('.add-book-curtain');
@@ -29,7 +30,7 @@ closeAddBookPanel.addEventListener('click', () => {
     addBookPanel.classList.toggle('hidden');
 });
 
-function renderBookEntry(title, author, percent) {
+function renderBookEntry(title, author, status) {
     const bookDiv = document.createElement('div');
     mainDiv.appendChild(bookDiv);
     bookDiv.setAttribute('class', 'book');
@@ -37,7 +38,7 @@ function renderBookEntry(title, author, percent) {
     const bookmarkDiv = document.createElement('img');
     bookDiv.appendChild(bookmarkDiv);
     bookmarkDiv.setAttribute('class', 'bookmark btn');
-    bookmarkDiv.setAttribute('src', 'assets/icon-bookmark.svg');
+    bookmarkDiv.setAttribute('src', 'assets/icon-bookmark-off.svg');
 
     const bookDetailsDiv = document.createElement('div');
     bookDiv.appendChild(bookDetailsDiv);
@@ -53,9 +54,9 @@ function renderBookEntry(title, author, percent) {
     bookDiv.appendChild(commentsDiv);
     commentsDiv.setAttribute('class', 'comments');
 
-    const percentDiv = document.createElement('h4');
-    commentsDiv.appendChild(percentDiv);
-    percentDiv.textContent = percent + '% complete';
+    const statusDiv = document.createElement('h4');
+    commentsDiv.appendChild(statusDiv);
+    bookmarkDiv.setAttribute('src', 'assets/icon-bookmark-off.svg');
 
     const trashDiv = document.createElement('img');
     commentsDiv.appendChild(trashDiv);
@@ -63,15 +64,15 @@ function renderBookEntry(title, author, percent) {
     trashDiv.setAttribute('class', 'delete btn');
 }
 
-function Book(title, author, percent) {
+function Book(title, author, status) {
     this.title = title;
     this.author = author;
-    this.percent = percent;
+    this.status = status;
 }
 
 function renderLibrary() {
     myLibrary.forEach((book) => {
-        renderBookEntry(book.title, book.author, book.percent);
+        renderBookEntry(book.title, book.author, book.status);
     });
 }
 
@@ -146,9 +147,8 @@ submitBtn.addEventListener('click', (event) => {
 function createBook() {
     const title = newBookTitle.value.trim();
     const author = newBookAuthor.value.trim();
-    const percent = Math.round(Math.random() * 100);
-    const newBook = new Book(title, author, percent);
-    console.log(newBook);
+    const status = newBookStatus.checked;
+    const newBook = new Book(title, author, status);
     myLibrary.push(newBook);
 
     mainDiv.textContent = '';
@@ -156,6 +156,9 @@ function createBook() {
     newBookAuthor.value = '';
     renderLibrary();
     applyTrashButtons();
+
+    console.table(myLibrary);
+    checkBookmark();
 }
 
 function deleteBook(index) {
@@ -163,6 +166,8 @@ function deleteBook(index) {
     mainDiv.textContent = '';
     renderLibrary();
     applyTrashButtons();
+    checkBookmark();
+    toggleBookmark();
 }
 
 function applyTrashButtons() {
@@ -174,5 +179,36 @@ function applyTrashButtons() {
     });
 }
 
-renderLibrary(); // Initialize
+function checkBookmark() {
+    const bookmarks = document.querySelectorAll('.bookmark');
+    for (let i = 0; i < bookmarks.length; i++) {
+        console.log(i + ': ' + myLibrary[i].status);
+        if (myLibrary[i].status) {
+            bookmarks[i].setAttribute('src', 'assets/icon-bookmark.svg');
+        } else {
+            bookmarks[i].setAttribute('src', 'assets/icon-bookmark-off.svg');
+        }
+    }
+}
+
+function toggleBookmark() {
+    const bookmarks = document.querySelectorAll('.bookmark');
+    bookmarks.forEach((bookmark, index) => {
+        bookmark.addEventListener('click', () => {
+            if (myLibrary[index].status) {
+                myLibrary[index].status = false;
+                bookmarks[index].setAttribute('src', 'assets/icon-bookmark-off.svg');
+            } else {
+                myLibrary[index].status = true;
+                bookmarks[index].setAttribute('src', 'assets/icon-bookmark.svg');
+            }
+            console.table(myLibrary);
+        });
+    });
+}
+
+// Initialize
+renderLibrary();
 applyTrashButtons();
+checkBookmark();
+toggleBookmark();

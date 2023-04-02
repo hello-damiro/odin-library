@@ -107,7 +107,7 @@ main {
 
 .bookmark {
     position: absolute;
-    margin-top: -18px;
+    margin-top: -17px;
 }
 
 .comments {
@@ -205,6 +205,17 @@ footer img {
     letter-spacing: 0.1rem;
 }
 
+.checkout > div {
+    margin-top: 10px;
+    margin-left: -4px;
+    display: flex;
+    align-items: center;
+}
+
+.list-label {
+    margin-left: 4px;
+}
+
 .add-book input[type='text'] {
     width: calc(100% - 24px);
     padding: 12px;
@@ -260,4 +271,25 @@ footer img {
 
 .error {
     box-shadow: inset 0px 0px 3px 1px red;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+input[type='radio'] {
+    border-radius: 50%;
+}
+
+input[type='radio']:checked {
+    /* The calc() function allows the transparent property to be set 1px after the color value, creating a solid blue circle inside the input field. */
+    background-image: radial-gradient(var(--yellow), 40%, transparent calc(40% + 1px));
+}
+
+input[type='checkbox']:checked {
+    background: url('assets/icon-check.svg') no-repeat center / 75% auto;
 }
