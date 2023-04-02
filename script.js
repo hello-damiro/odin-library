@@ -2,13 +2,13 @@ let myLibrary = [
     { title: 'To Kill a Mockingbird', author: 'Harper Lee', status: true },
     { title: '1984', author: 'George Orwell', status: false },
     { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', status: true },
-    { title: 'Pride and Prejudice', author: 'Jane Austen', status: false },
+    /* { title: 'Pride and Prejudice', author: 'Jane Austen', status: false },
     { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', status: true },
     { title: 'The Catcher in the Rye', author: 'J.D. Salinger', status: true },
     { title: 'Animal Farm', author: 'George Orwell', status: true },
     { title: 'Brave New World', author: 'Aldous Huxley', status: true },
     { title: 'The Picture of Dorian Gray', author: 'Oscar Wilde', status: true },
-    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', status: true },
+    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', status: true }, */
 ];
 
 const mainDiv = document.querySelector('main');
@@ -156,9 +156,8 @@ function createBook() {
     newBookAuthor.value = '';
     renderLibrary();
     applyTrashButtons();
-
-    console.table(myLibrary);
     checkBookmark();
+    toggleBookmark();
 }
 
 function deleteBook(index) {
