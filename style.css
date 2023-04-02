@@ -125,6 +125,16 @@ main {
     margin-left: 4px;
 }
 
+.delete {
+    background: var(--white);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.delete:hover {
+    background: var(--yellow-lt);
+}
+
 footer {
     position: sticky;
     top: 100vh;
@@ -165,7 +175,7 @@ footer img {
     border-radius: 4px;
 }
 
-.add-book div {
+.add-book > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -189,7 +199,7 @@ footer img {
     color: var(--blue);
 }
 
-.add-book label {
+.form-field label {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -199,7 +209,7 @@ footer img {
     width: calc(100% - 24px);
     padding: 12px;
     margin-top: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     font-family: var(--font);
     font-size: 1.2rem;
     color: var(--blue);
@@ -231,10 +241,23 @@ footer img {
     box-shadow: inset 0px 0px 3px 1px var(--yellow);
 }
 
+.alert {
+    height: 16px;
+    color: red;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    text-align: right;
+}
+
 .hidden {
     display: none;
 }
 
 .btn:hover {
     cursor: pointer;
+}
+
+.error {
+    box-shadow: inset 0px 0px 3px 1px red;
 }
