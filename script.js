@@ -1,15 +1,14 @@
-let myLibrary = [
-    { title: 'To Kill a Mockingbird', author: 'Harper Lee', status: true },
-    { title: '1984', author: 'George Orwell', status: false },
-    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', status: true },
-    /* { title: 'Pride and Prejudice', author: 'Jane Austen', status: false },
-    { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', status: true },
-    { title: 'The Catcher in the Rye', author: 'J.D. Salinger', status: true },
-    { title: 'Animal Farm', author: 'George Orwell', status: true },
-    { title: 'Brave New World', author: 'Aldous Huxley', status: true },
-    { title: 'The Picture of Dorian Gray', author: 'Oscar Wilde', status: true },
-    { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', status: true }, */
-];
+let myLibrary = [];
+// { title: 'To Kill a Mockingbird', author: 'Harper Lee', status: true },
+// { title: '1984', author: 'George Orwell', status: false },
+// { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', status: true },
+// { title: 'Pride and Prejudice', author: 'Jane Austen', status: false },
+// { title: 'One Hundred Years of Solitude', author: 'Gabriel García Márquez', status: true },
+// { title: 'The Catcher in the Rye', author: 'J.D. Salinger', status: true },
+// { title: 'Animal Farm', author: 'George Orwell', status: true },
+// { title: 'Brave New World', author: 'Aldous Huxley', status: true },
+// { title: 'The Picture of Dorian Gray', author: 'Oscar Wilde', status: true },
+// { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', status: true },
 
 const mainDiv = document.querySelector('main');
 const newBookTitle = document.querySelector('#new-title');
@@ -53,10 +52,6 @@ function renderBookEntry(title, author, status) {
     const commentsDiv = document.createElement('div');
     bookDiv.appendChild(commentsDiv);
     commentsDiv.setAttribute('class', 'comments');
-
-    const statusDiv = document.createElement('h4');
-    commentsDiv.appendChild(statusDiv);
-    bookmarkDiv.setAttribute('src', 'assets/icon-bookmark-off.svg');
 
     const trashDiv = document.createElement('img');
     commentsDiv.appendChild(trashDiv);

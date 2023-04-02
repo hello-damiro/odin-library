@@ -4,7 +4,7 @@
 
 <!-- ## Warning! This is a work in progress -->
 
-From here on, concept are fairly new to me specially doing it to a new language. Time is at the essence, hopefully I can grasp all upcoming concept ggracefully. **_Completed April 02 2023_**
+From here on, concept are fairly new to me specially doing it to a new language. Time is at the essence, hopefully I can grasp all upcoming concept ggracefully. **_Officially Completed Day 2, April 02 2023_**
 
 LIVE SITE [HERE](https://hello-damiro.github.io/odin-library)
 
@@ -12,9 +12,24 @@ LIVE SITE [HERE](https://hello-damiro.github.io/odin-library)
 
 **Day 1:** Prepared initial files. Finished styling complete with assets and functionalities of button. Started with the JS script.
 
-**Day 2:** Halfday struggled with constructors finding way best to implement it. Overthinking strikes again. Done 4 of the afternoon.
+**Day 2:** Halfday struggled with constructors finding way best to implement it. Overthinking strikes again. Part 1, done 4 in the afternoon.
+
+**Day 2.5** Since I'm learning modularization, I kinda want to implement Object Literal Pattern here. More hands-on, the merrier!
 
 </br>
+
+## Object Literal Pattern - Ground Rules
+
+1. Self contained module
+    * everything to do with the module is in the module
+    * no global variables
+    * if a module manages more than one thing it should be split up
+2. separation of concerns
+3. DRY code: Dont Repeat Yourself
+4. efficient DOM usage
+    * very few selections
+5. no memory leaks
+    * all events can be undone
 
 ## Challenge
 
